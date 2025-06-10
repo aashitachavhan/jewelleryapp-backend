@@ -1,0 +1,16 @@
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+.Python/
+env/
+venv/  # Your virtual environment
+pip-log.log
+pip-delete-this-directory.log
+.env   # Environment variables file
+
+# OS and Editor Specific
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

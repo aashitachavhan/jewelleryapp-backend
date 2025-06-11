@@ -48,18 +48,20 @@ uri = os.getenv('MONGODB_URI')
 client = None
 db = None
 products_collection = None
+carts_collection = None
 
 def connect_to_mongo():
-    global client, db, products_collection
+    global client, db, products_collection, carts_collection
     client = MongoClient(uri, server_api=ServerApi('1'))
     try:
         # Test the connection
         client.admin.command('ping')
         print("Pinged your deployment. You successfully connected to MongoDB!")
         
-        # Connect to the database and collection
+        # Connect to the database and collections
         db = client["jewelleryDB"]
         products_collection = db["products"]
+        carts_collection = db["carts"]
 
     except PyMongoError as e:
         print(f"Could not connect to MongoDB: {e}")
